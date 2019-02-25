@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+      name: ZUUL-GATEWAY
+server:
+  port: 9999
+eureka:
+  client:
+   registerWithEureka: true #注册到Eureka,在注册中心显示
+   service-url:
+      defaultZone: http://www.eureka-7001.com:7001/eureka
+  instance:
+    instance-id: gateway-9999 #显示的名字而已
+    prefer-ip-address: true  #显示ip
+zuul:
+  routes:
+    hmEmployee.serviceId: employee-provider
+    hmEmployee.path: /employee/**  # 匹配user-provider /hm开头的请求映射到user-provider服务上
+  ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
+  prefix: /haohuigou   # 访问前缀
+---
+spring:
+  profiles: test
+  application:
+      name: ZUUL-GATEWAY-test
+server:
+  port: 9998
+eureka:
+  client:
+   registerWithEureka: true #注册到Eureka,在注册中心显示
+   service-url:
+      defaultZone: http://www.eureka-7001.com:7001/eureka
+  instance:
+    instance-id: gateway-9998 #显示的名字而已
+    prefer-ip-address: true  #显示ip
+zuul:
+  routes:
+    hmEmployee.serviceId: employee-provider
+    hmEmployee.path: /employee/**  # 匹配user-provider /hm开头的请求映射到user-provider服务上
+  ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
+  prefix: /haohuigou   # 访问前缀
+
+
+
+
+
