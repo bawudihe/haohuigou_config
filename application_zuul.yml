@@ -20,6 +20,9 @@ zuul:
   routes:
     hmEmployee.serviceId: employee-provider
     hmEmployee.path: /employee/**  # 匹配user-provider /hm开头的请求映射到user-provider服务上
+    
+    hmProduct.serviceId: haohuigou-product
+    hmProduct.path: /product/** 
   ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
   prefix: /haohuigou   # 访问前缀
 ---
@@ -41,6 +44,9 @@ zuul:
   routes:
     hmEmployee.serviceId: employee-provider
     hmEmployee.path: /employee/**  # 匹配user-provider /hm开头的请求映射到user-provider服务上
+    
+    hmProduct.serviceId: haohuigou-product
+    hmProduct.path: /product/** 
   ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
   prefix: /haohuigou   # 访问前缀
 
