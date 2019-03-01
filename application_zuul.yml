@@ -25,10 +25,20 @@ zuul:
     hmProduct.path: /product/** 
   ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
   prefix: /haohuigou   # 访问前缀
+  
+  
+haohuigou-product:
+  ribbon:
+    ReadTimeout: 10000
+    SocketTimeout: 10000
 
-
-
-
+hystrix:
+  command:
+    haohuigou-product:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 
 
 ---
