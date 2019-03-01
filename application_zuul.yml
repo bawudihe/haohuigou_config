@@ -23,6 +23,11 @@ zuul:
     
     hmProduct.serviceId: haohuigou-product
     hmProduct.path: /product/** 
+    
+    hmCommon.serviceId: common-provider
+    hmCommon.path: /common/** 
+    
+    
   ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
   prefix: /haohuigou   # 访问前缀
   
@@ -63,6 +68,9 @@ zuul:
     
     hmProduct.serviceId: haohuigou-product
     hmProduct.path: /product/** 
+    
+    hmCommon.serviceId: common-provider
+    hmCommon.path: /common/** 
   ignored-services: "*"   #"*" #user-provider #忽略直接使用服务名访问  *忽略所有的
   prefix: /haohuigou   # 访问前缀
 
