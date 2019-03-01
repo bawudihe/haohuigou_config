@@ -27,18 +27,7 @@ zuul:
   prefix: /haohuigou   # 访问前缀
 
 
-haohuigou-product:
-  ribbon:
-    ReadTimeout: 10000
-    SocketTimeout: 10000
 
-hystrix:
-  command:
-    haohuigou-product:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
 
 
 
