@@ -1,9 +1,16 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: COMMON-PRIVODER
+
 server:
   port: 8003
   max-http-header-size: 4048576 #Request header is too large异常解决
-spring:
-  application:
-    name: COMMON-PRIVODER
+  
 eureka:
   instance:
     hostname: localhsot
